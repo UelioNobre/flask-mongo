@@ -72,6 +72,17 @@ db.places.find({price: {'$ne': 75}}, {price: true})
 ```
 
 ### `$gt:` Maior que.
+
+Todos os valores que sejam maiores de `500`
+
+```bash
+db.places.find({price: {'$gt': 500}}, {price: true}).sort({price: 1})
+# [ 
+#   { _id: 2, price: 746 }, 
+#   { _id: 9, price: 5595 } 
+#   ]
+```
+
 - `$lt:` Menor que.
 - `$gte:` Maior ou igual a.
 - `$lte:` Menor ou igual a.
