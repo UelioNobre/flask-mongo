@@ -21,7 +21,9 @@ docker cp nome-do-arquivo.json <nome-do-container-ou-id>:/tmp/nome-arquivo.json
 docker exec mongodb_v6 mongoimport -d trybnb -c places --file /tmp/trybnb.json --jsonArray
 ```
 
-### Acessando outro banco de dados
+## Comando mongo para manipulacão do banco de dados
+### Acessando um banco de dados
 ```bash
 use <outro-banco-de-dados>
 ```
+
