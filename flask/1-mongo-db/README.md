@@ -44,3 +44,12 @@ show collections
 db.places.countDocumentos()
 ```
 
+### Buscando o documento pelo `id`
+```
+db.places.find({ '_id': 7 })
+```
+
+
+--- 
+Mais comandos mongodb:
+[Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
