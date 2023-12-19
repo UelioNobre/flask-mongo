@@ -46,6 +46,18 @@ show collections
 db.places.countDocumentos()
 ```
 
+## Documentos baseados em critérios
+
+O comando `find` tem a seguinte estrutura:
+```bash
+db.<colecao>.find(<query>, <projection>)
+```
+
+O parametro `query`, é semelhante com a palavra `WHERE` de algum banco de dados relacionais. Ou seja, um filtro para especificar um parametro de busca.
+
+O parametro `projection`, é semelhando a palavra `SELECT`. É neste parametro que se especifica as propriedades do documento que sejam retornadas.
+
+
 ### Buscando o documento pelo `id`
 ```
 db.places.find({ '_id': 7 })
