@@ -34,6 +34,11 @@ db // prints the current database
 use <outro-banco-de-dados>
 ```
 
+### Exibe as coleções disponiveis no banco
+```bash
+show collections
+```
+
 ### Números de documentos na coleção
 ```bash
 db.places.countDocumentos()
