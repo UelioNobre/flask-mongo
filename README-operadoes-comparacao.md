@@ -17,6 +17,15 @@ Abaixo está um resumo dos operadores de comparação mais comuns no MongoDB:
 
 Esses operadores podem ser usados em consultas para filtrar documentos com base em condições específicas. Por exemplo, você pode usar `$gt` para encontrar documentos com valores de campo maiores que um determinado número, ou `$in` para encontrar documentos cujo valor de campo esteja em um conjunto específico.
 
+### Estrutura de uma comparação
+
+```json
+{"chave": { "operador": "valor" } }
+```
+
+- `chave`: A chave do documento
+- `operador`: O operador de comparação
+- `valor`: O valor da comparação
 --- 
 
 
