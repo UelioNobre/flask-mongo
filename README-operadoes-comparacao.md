@@ -122,7 +122,29 @@ db.places.find({price: {'$lte': 50}}, {price: true}).sort({price: 1})
 # ]
 ```
 - `$in:` Pertence a um conjunto específico.
-- `$nin:` Não pertence a um conjunto específico.
+
+Todos os valores que tenham "fogão", nas `amenities`
+
+```bash
+db.places.find({'amenities': {$in: ["Stove"]}}, {'price': true})
+# [ 
+#   { _id: 12, price: 75 }, 
+#   { _id: 11, price: 35 } 
+# ]
+```
+### `$nin:` Não pertence a um conjunto específico.
+
+Todos os valores que `não` tenham "fogão, TV e Shampoo", nas `amenities`
+
+```bash
+db.places.find({'amenities': {$nin: ["Stove", "TV", "Shampoo"]}}, # {'price': true})
+# [
+#   { _id: 1, price: 380 },
+#   { _id: 9, price: 5595 },
+#   { _id: 10, price: 351 }
+# ]
+```
+
 - `$exists:` Verifica se um campo existe.
 - `$type:` Compara o tipo de dado de um campo.
 - `$regex:` Realiza uma comparação usando expressões regulares.
