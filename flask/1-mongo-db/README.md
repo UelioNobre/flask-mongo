@@ -97,6 +97,25 @@ db.places.find({ 'address.country_code': 'BR' }, {'name': true})
 # Retorna os campos _id, name e os dados do host
 db.places.find({ '_id': 7 }, { 'name': true, 'host': true })
 ```
+
+Omitindo campos na consulta
+```bash
+# Um documento específico
+db.places.find({ '_id': 7 }, { 'house_rules': false, 'reviews': false, 'review_scores': false, 'host': false, 'address': false, 'amenities': false, 'description': false})
+```
+
+```bash
+# Todos os documentos
+db.places.find({}, { 'house_rules': false, 'reviews': false, 'review_scores': false, 'host': false, 'address': false, 'amenities': false, 'description': false})
+```
+
+Inserir valores true/false na projeção, irá causar um erro. Use somente `true` ou somente `false` na especificação dos campos.
+```bash
+db.places.find({}, { 'house_rules': false, 'reviews': true})
+# Causará um erro
+# MongoServerError: Cannot do inclusion on field reviews in exclusion projection
+```
+
 --- 
 Mais comandos mongodb:
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
