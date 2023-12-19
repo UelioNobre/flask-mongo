@@ -87,8 +87,15 @@ db.places.find({'address': {'country_code'}}: 'BR'}
 
 
 ## Paramentro `projection`
+
+Retornando campos expecificos 
+
 ```bash
+# Retorna os campos _id e name
 db.places.find({ 'address.country_code': 'BR' }, {'name': true})
+
+# Retorna os campos _id, name e os dados do host
+db.places.find({ '_id': 7 }, { 'name': true, 'host': true })
 ```
 --- 
 Mais comandos mongodb:
