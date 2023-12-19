@@ -22,6 +22,12 @@ docker exec mongodb_v6 mongoimport -d trybnb -c places --file /tmp/trybnb.json -
 ```
 
 ## Comando mongo para manipulacão do banco de dados
+
+### Exibe os bancos de dados existentes
+```bash
+show dbs
+```
+
 ### Acessando um banco de dados
 ```bash
 use <outro-banco-de-dados>
