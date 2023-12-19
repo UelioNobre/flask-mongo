@@ -161,7 +161,16 @@ db.places.find({'cancellation_policy': {$exists: false}}, {'cancellation_policy'
 # ]
 ```
 
-- `$type:` Compara o tipo de dado de um campo.
+### `$type:` Compara o tipo de dado de um campo.
+
+Todos os valores e a quantidade de noites minímas, que tenha o valor da chave `minimum_nights` seja uma `string`
+
+```bash
+db.places.find({minimum_nights: {$type: "string"}}, {price: true, minimum_nights: true})
+# [ 
+#   { _id: 11, minimum_nights: '2', price: 35 } 
+# ]
+```
 - `$regex:` Realiza uma comparação usando expressões regulares.
 
 
