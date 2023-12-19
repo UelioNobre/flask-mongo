@@ -49,6 +49,22 @@ db.places.countDocumentos()
 db.places.find({ '_id': 7 })
 ```
 
+### Busca por um documento, em um campo aninhado
+```bash
+# Retorna todos os documentos, na chave "address", que tenha a chave "country_code" com valor "BR"
+db.places.find({'address.country_code': 'BR'})
+```
+
+Acessar utilizando objetos aninhados, causa um erro:
+```bash
+db.places.find({'address': {'country_code'}}: 'BR'}
+# Uncaught:
+# SyntaxError: Unexpected token (1:42)
+
+> 1 | db.places.find({'address': {'country_code'}}: 'BR'}
+    |                                           ^
+  2 |
+```
 
 --- 
 Mais comandos mongodb:
