@@ -116,6 +116,18 @@ db.places.find({}, { 'house_rules': false, 'reviews': true})
 # MongoServerError: Cannot do inclusion on field reviews in exclusion projection
 ```
 
+## Ordenando resultados
+
+Em ordem ascendente
+
+```bash
+db.places.find({}, {'name': true}).sort({'name': 1})
+```
+
+Em ordem decrescente
+```bash
+db.places.find({}, {'name': true}).sort({'name': -1})
+```
 --- 
 Mais comandos mongodb:
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
