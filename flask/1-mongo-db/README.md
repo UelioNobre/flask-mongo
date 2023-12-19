@@ -26,6 +26,7 @@ docker exec mongodb_v6 mongoimport -d trybnb -c places --file /tmp/trybnb.json -
 ### Exibe os bancos de dados existentes
 ```bash
 show dbs
+db // prints the current database
 ```
 
 ### Acessando um banco de dados
