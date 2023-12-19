@@ -171,7 +171,20 @@ db.places.find({minimum_nights: {$type: "string"}}, {price: true, minimum_nights
 #   { _id: 11, minimum_nights: '2', price: 35 } 
 # ]
 ```
-- `$regex:` Realiza uma comparação usando expressões regulares.
+
+---
+
+### `$regex:` Realiza uma comparação usando expressões regulares.
+
+Todos os valores e o nome dos anfitriões, que o nome deles terminam com a silaba `do`
+
+```bash
+db.places.find({'host.host_name': {$regex: /do$/}}, {price: true, 'host.host_name': true})
+# [
+#   { _id: 1, price: 380, host: { host_name: 'Ricardo' } },
+#   { _id: 9, price: 5595, host: { host_name: 'Fernando' } }
+# ]
+```
 
 
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
