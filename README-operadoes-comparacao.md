@@ -110,6 +110,17 @@ db.places.find({price: {'$gte': 380}}, {price: true}).sort({price: 1})
 ```
 
 - `$lte:` Menor ou igual a.
+
+Todos os valores que sejam menores ou iguais a `50`
+
+```bash
+db.places.find({price: {'$lte': 50}}, {price: true}).sort({price: 1})
+# [
+#   { _id: 11, price: 35 },
+#   { _id: 8, price: 50 },
+#   { _id: 3, price: 50 }
+# ]
+```
 - `$in:` Pertence a um conjunto específico.
 - `$nin:` Não pertence a um conjunto específico.
 - `$exists:` Verifica se um campo existe.
