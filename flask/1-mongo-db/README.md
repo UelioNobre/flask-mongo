@@ -27,3 +27,8 @@ docker exec mongodb_v6 mongoimport -d trybnb -c places --file /tmp/trybnb.json -
 use <outro-banco-de-dados>
 ```
 
+### Números de documentos na coleção
+```bash
+db.places.countDocumentos()
+```
+
