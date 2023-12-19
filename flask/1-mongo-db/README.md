@@ -129,5 +129,21 @@ Em ordem decrescente
 db.places.find({}, {'name': true}).sort({'name': -1})
 ```
 --- 
+
+
+## Exercícios
+- Realize uma busca por todos os imóveis que se localizam no Brasil ordenados, de forma crescente, pelo atributo _id:
+
+```bash
+db.places.find({ 'address.country': 'Brazil'}).sort({'_id': 1})
+# 6 resultados
+```
+
+- Realize uma busca por todos os imóveis que se localizam na Turquia que retorne a quantidade de imóveis.
 Mais comandos mongodb:
+
+```bash
+db.places.find({ 'address.country': 'Turkey' }).count()
+# 1
+```
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
