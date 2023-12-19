@@ -83,7 +83,19 @@ db.places.find({price: {'$gt': 500}}, {price: true}).sort({price: 1})
 #   ]
 ```
 
-- `$lt:` Menor que.
+### `$lt:` Menor que.
+
+Todos os valores que sejam menores de `75`
+
+```bash
+db.places.find({price: {'$lt': 75}}, {price: true}).sort({price: 1})
+# [
+#   { _id: 11, price: 35 },
+#   { _id: 8, price: 50 },
+#   { _id: 3, price: 50 }
+# ]
+```
+
 - `$gte:` Maior ou igual a.
 - `$lte:` Menor ou igual a.
 - `$in:` Pertence a um conjunto específico.
