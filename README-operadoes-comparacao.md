@@ -146,6 +146,21 @@ db.places.find({'amenities': {$nin: ["Stove", "TV", "Shampoo"]}}, # {'price': tr
 ```
 
 - `$exists:` Verifica se um campo existe.
+Todos os valores que tenham uma politica de cancelamento
+```bash
+db.places.find({'cancellation_policy': {$exists: false}}, {'cancellation_policy': true})
+# [
+#   { _id: 2, cancellation_policy: 'flexible' },
+#   { _id: 4, cancellation_policy: 'flexible' },
+#   { _id: 1, cancellation_policy: 'flexible' },
+#   { _id: 8, cancellation_policy: 'moderate' },
+#   { _id: 7, cancellation_policy: 'strict_14_with_grace_period' },
+#   { _id: 6, cancellation_policy: 'strict_14_with_grace_period' },
+#   { _id: 3, cancellation_policy: 'flexible' },
+#   { _id: 11, cancellation_policy: 'super_strict_30' }
+# ]
+```
+
 - `$type:` Compara o tipo de dado de um campo.
 - `$regex:` Realiza uma comparação usando expressões regulares.
 
