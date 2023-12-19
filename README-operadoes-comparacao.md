@@ -39,6 +39,7 @@ db.places.find({}, {'price': true}).sort({'price': 1})
 #  { _id: 9, price: 5595 }
 #]
 ```
+---
 
 ### `$eq:` Equivale a (igual a).
 
@@ -70,6 +71,7 @@ db.places.find({price: {'$ne': 75}}, {price: true})
 #   { _id: 11, price: 35 }
 # ]
 ```
+---
 
 ### `$gt:` Maior que.
 
@@ -82,6 +84,7 @@ db.places.find({price: {'$gt': 500}}, {price: true}).sort({price: 1})
 #   { _id: 9, price: 5595 } 
 #   ]
 ```
+---
 
 ### `$lt:` Menor que.
 
@@ -95,8 +98,9 @@ db.places.find({price: {'$lt': 75}}, {price: true}).sort({price: 1})
 #   { _id: 3, price: 50 }
 # ]
 ```
+---
 
-- `$gte:` Maior ou igual a.
+### `$gte:` Maior ou igual a.
 
 Todos os valores que sejam maiores ou iguais a `380`
 
@@ -108,8 +112,9 @@ db.places.find({price: {'$gte': 380}}, {price: true}).sort({price: 1})
 #   { _id: 9, price: 5595 }
 # ]
 ```
+---
 
-- `$lte:` Menor ou igual a.
+### `$lte:` Menor ou igual a.
 
 Todos os valores que sejam menores ou iguais a `50`
 
@@ -121,7 +126,9 @@ db.places.find({price: {'$lte': 50}}, {price: true}).sort({price: 1})
 #   { _id: 3, price: 50 }
 # ]
 ```
-- `$in:` Pertence a um conjunto específico.
+---
+
+### `$in:` Pertence a um conjunto específico.
 
 Todos os valores que tenham "fogão", nas `amenities`
 
@@ -132,6 +139,8 @@ db.places.find({'amenities': {$in: ["Stove"]}}, {'price': true})
 #   { _id: 11, price: 35 } 
 # ]
 ```
+---
+
 ### `$nin:` Não pertence a um conjunto específico.
 
 Todos os valores que `não` tenham "fogão, TV e Shampoo", nas `amenities`
@@ -144,8 +153,9 @@ db.places.find({'amenities': {$nin: ["Stove", "TV", "Shampoo"]}}, # {'price': tr
 #   { _id: 10, price: 351 }
 # ]
 ```
+---
 
-- `$exists:` Verifica se um campo existe.
+### `$exists:` Verifica se um campo existe.
 Todos os valores que tenham uma politica de cancelamento
 ```bash
 db.places.find({'cancellation_policy': {$exists: false}}, {'cancellation_policy': true})
@@ -160,6 +170,7 @@ db.places.find({'cancellation_policy': {$exists: false}}, {'cancellation_policy'
 #   { _id: 11, cancellation_policy: 'super_strict_30' }
 # ]
 ```
+---
 
 ### `$type:` Compara o tipo de dado de um campo.
 
@@ -171,7 +182,6 @@ db.places.find({minimum_nights: {$type: "string"}}, {price: true, minimum_nights
 #   { _id: 11, minimum_nights: '2', price: 35 } 
 # ]
 ```
-
 ---
 
 ### `$regex:` Realiza uma comparação usando expressões regulares.
