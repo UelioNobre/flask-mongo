@@ -18,19 +18,60 @@ Esses operadores podem ser usados em consultas para filtrar documentos com base 
 
 ## Exemplos
 
-### `$eq:` - Equivale a (igual a).
+Todos preços disponíveis ordenados de forma ascendente:
+
+```bash
+db.places.find({}, {'price': true}).sort({'price': 1})
+
+# Todos os resultados
+#[
+#  { _id: 11, price: 35 },
+#  { _id: 8, price: 50 },
+#  { _id: 3, price: 50 },
+#  { _id: 7, price: 75 },
+#  { _id: 12, price: 75 },
+#  { _id: 4, price: 150 },
+#  { _id: 5, price: 185 },
+#  { _id: 10, price: 351 },
+#  { _id: 6, price: 353 },
+#  { _id: 1, price: 380 },
+#  { _id: 2, price: 746 },
+#  { _id: 9, price: 5595 }
+#]
+```
+
+### `$eq:` Equivale a (igual a).
 
 ```bash
 db.places.find({price: {'$eq': 75}}, {price: true})
 
-# resultado
 # [ 
 #  { _id: 7, price: 75 }, 
 #  { _id: 12, price: 75 }
 # ]
 ```
-- `$ne:` Não equivale a (diferente de).
-- `$gt:` Maior que.
+--- 
+
+### `$ne:` Não equivale a (diferente de).
+
+Todos os valores que sejam diferentes de `75`
+```bash
+db.places.find({price: {'$ne': 75}}, {price: true})
+# [
+#   { _id: 2, price: 746 },
+#   { _id: 4, price: 150 },
+#   { _id: 1, price: 380 },
+#   { _id: 5, price: 185 },
+#   { _id: 8, price: 50 },
+#   { _id: 6, price: 353 },
+#   { _id: 9, price: 5595 },
+#   { _id: 10, price: 351 },
+#   { _id: 3, price: 50 },
+#   { _id: 11, price: 35 }
+# ]
+```
+
+### `$gt:` Maior que.
 - `$lt:` Menor que.
 - `$gte:` Maior ou igual a.
 - `$lte:` Menor ou igual a.
