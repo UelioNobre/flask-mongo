@@ -66,6 +66,12 @@ db.places.find({'address': {'country_code'}}: 'BR'}
   2 |
 ```
 
+
+### Conta quantos documentos há em uma consulta
+```bash 
+ db.places.find({'address.country_code': 'BR'}).count()
+ ```
+
 --- 
 Mais comandos mongodb:
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
