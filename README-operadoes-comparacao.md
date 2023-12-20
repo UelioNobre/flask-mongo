@@ -226,5 +226,18 @@ db.places.find({amenities: {$all: ['Stove', 'Elevator']}}, {amenities: true})
 
 # Nessa caso, nenhum dado será retornado, pois não existe facilidades que tenham as duas opções: Fogão e Elevador juntos.
 ```
+---
+
+### $elemMatch
+Seleciona documentos se pelo menos um elemento de um array atender a determinada condição. 
+
+Útil para utilizar mais de um operador.
+
+No exemplo abaixo, irá retornar todos os documentos que tenham as comodidades de `Stove` ou `Pool`.
+
+```bash
+db.places.find({ amenities: { $elemMatch: { $in: ['Stove', 'Pool'] } } }, { _id_: true })
+# [ { _id: 2 }, { _id: 9 }, { _id: 12 }, { _id: 11 } ]
+```
 
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
