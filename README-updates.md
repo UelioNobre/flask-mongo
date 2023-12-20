@@ -1,6 +1,6 @@
 # MongoDB - Updates
 
-No mongo DB existe duas funções básicas para inserção de documentos:
+No mongo DB existe duas funções básicas para atualização de documentos:
 - updateOne
 - updateMany
 
