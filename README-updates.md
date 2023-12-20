@@ -8,9 +8,8 @@ No mongo DB existe duas funções básicas para inserção de documentos:
 
 No comando `update`, o que tem de diferente é a utilização das chaves `$set` e `$unset`.
 
-A chave `$set` é utilizado para atualizar um/vários campos de um documento.
-
-A chave `$unset` remove chaves criadas pelo comando `$set` ou chaves existentes.
+- A chave `$set` é utilizado para atualizar um/vários campos de um documento.
+- A chave `$unset` remove chaves criadas pelo comando `$set` ou chaves existentes.
 
 Exemplo atualizando um documento `$set`
 
@@ -41,7 +40,7 @@ db.places.updateOne({_id: {$eq: 101}}, {$unset:{status: true}})
 
 ### `updateMany()`
 
-O comando `updateMany` por outro lado, atualiza vários documentos de uma só vez. Este comandop pode alterar valores existentes, assim como criar novos usando o operador `$set` ou pode remover chaves existentes com o operador `$unset`.
+O comando `updateMany` por outro lado, atualiza vários documentos de uma só vez. Este comando altera valores existentes, assim como pode criar novas chaves usando o operador `$set` ou pode remover chaves existentes com o operador `$unset`.
 
 Exemplo inserindo uma nova chave com `$set` em vários documentos.
 
