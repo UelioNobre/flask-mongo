@@ -195,6 +195,36 @@ db.places.find({'host.host_name': {$regex: /do$/}}, {price: true, 'host.host_nam
 #   { _id: 9, price: 5595, host: { host_name: 'Fernando' } }
 # ]
 ```
+---
 
+### `$all` Realiza comparações em arrays
+
+O operador `$all` retorna somente os documentos que tenham o critério informado no array. Olhando pela perspectiva de conjuntos, se `todos` os valores informados estiverem presentes, retorna o respectivo documento. Caso contrário, não.
+
+```bash
+db.places.find({amenities: {$all: ['Stove', 'Garage']}}, {amenities: true})
+# [
+#   {
+#     _id: 11,
+#     amenities: [
+#       'TV',
+#       'Stove',
+#       'Refrigerator',
+#       'Garage',
+#       'Essentials',
+#       'wardrobe',
+#       'Microwave'
+#     ]
+#   }
+# ]
+```
+
+O operador `$all` tem o efeito oposto do operador `$in` e `$nin`.
+
+```bash
+db.places.find({amenities: {$all: ['Stove', 'Elevator']}}, {amenities: true})
+
+# Nessa caso, nenhum dado será retornado, pois não existe facilidades que tenham as duas opções: Fogão e Elevador juntos.
+```
 
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
