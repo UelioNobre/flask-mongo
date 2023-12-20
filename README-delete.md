@@ -33,5 +33,25 @@ A função `deleteOne` remove o primeiro registro difinido na `projection`.
 db.places.deleteOne({_id: {$eq: 204}})
 # { acknowledged: true, deletedCount: 1 }
 ```
+---
+
+### `deleteMany()`
+
+A função `deleteMany` remove o primeiro registro difinido na `projection`.
+
+```bash
+db.places.deleteMany({_id: {$gte: 100}})
+# { acknowledged: true, deletedCount: 5 }
+```
+---
+
+### Truncate a coleção de documentos
+
+Semelhante ao comando `TRUNCATE` de linguagens SQL, utilizar a função `deleteMany` com um objeto vazio na `query`, irá `truncar` a coleção. Em outras palavras, irá remover todos os documentos.
+
+```bash
+db.places.deleteMany({})
+# Limpa toda a coleção
+```
 
 [Cheat Sheet MongoDB](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
