@@ -10,6 +10,12 @@ docker run --name mongodb_v6 -d -p 27017:27017 mongo:6.0
 docker exec -it mongodb_v6 mongosh
 ```
 
+Ou no terminal da máquina virtual
+
+```bash
+mongosh --port 27017
+```
+
 ### Copiar dados para uma máquina virtual Docker
 O arquivo `.json` importado, é resultado da saída do [mongoexport](https://www.mongodb.com/docs/database-tools/mongoexport/)
 ```bash
