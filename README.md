@@ -47,6 +47,11 @@ use <outro-banco-de-dados>
 show collections
 ```
 
+### Apagar uma collection
+```bash
+db.collection.drop()
+```
+
 ### Números de documentos na coleção
 ```bash
 db.places.countDocumentos()
